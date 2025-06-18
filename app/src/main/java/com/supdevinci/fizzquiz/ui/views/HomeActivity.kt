@@ -10,21 +10,27 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.supdevinci.fizzquiz.ui.components.Quiz
+import com.supdevinci.fizzquiz.ui.components.Home
 import com.supdevinci.fizzquiz.ui.theme.FizzQuizTheme
-import com.supdevinci.fizzquiz.viewmodels.QuizViewModel
+import com.supdevinci.fizzquiz.viewmodels.HomeViewModel
 
-class MainActivity : ComponentActivity() {
-    private val quizViewModel : QuizViewModel = QuizViewModel()
+class HomeActivity : ComponentActivity() {
+    private val viewModel: HomeViewModel = HomeViewModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        viewModel.getCategories()
         enableEdgeToEdge()
         setContent {
             FizzQuizTheme {
                 Scaffold { innerPadding ->
-                    Surface(modifier = Modifier.fillMaxSize().padding(innerPadding).padding(20.dp)) {
-                        Quiz(viewModel = quizViewModel, modifier = Modifier.padding())
+                    Surface(
+                        modifier = Modifier
+                            .fillMaxSize()
+                            .padding(innerPadding)
+                            .padding(20.dp)
+                    ) {
+                        Home(viewModel)
                     }
                 }
             }

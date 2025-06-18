@@ -14,16 +14,15 @@
         android:theme="@style/Theme.FizzQuiz"
         tools:targetApi="31">
         <activity
-            android:name=".ui.views.MainActivity"
+            android:name=".ui.views.HomeActivity"
             android:exported="true"
-            android:label="@string/app_name"
             android:theme="@style/Theme.FizzQuiz">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".ui.views.QuizActivity" android:theme="@style/Theme.FizzQuiz" />
     </application>
 
 </manifest>
