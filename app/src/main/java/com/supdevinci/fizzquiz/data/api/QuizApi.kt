@@ -6,9 +6,6 @@ import retrofit2.http.GET
 import retrofit2.http.Query
 
 interface QuizApi {
-    @GET("/api.php?amount=1&encode=base64")
-    suspend fun getOneQuestion(): QuizResponse
-
     @GET("/api_category.php")
     suspend fun getCategories(): CategoriesResponse
 

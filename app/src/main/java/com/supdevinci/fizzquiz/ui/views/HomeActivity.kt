@@ -15,11 +15,12 @@ import com.supdevinci.fizzquiz.ui.theme.FizzQuizTheme
 import com.supdevinci.fizzquiz.viewmodels.HomeViewModel
 
 class HomeActivity : ComponentActivity() {
-    private val viewModel: HomeViewModel = HomeViewModel()
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        val viewModel = HomeViewModel(application)
         viewModel.getCategories()
+
         enableEdgeToEdge()
         setContent {
             FizzQuizTheme {

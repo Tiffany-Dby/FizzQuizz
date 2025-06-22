@@ -66,4 +66,8 @@ dependencies {
     implementation("androidx.room:room-runtime:2.5.2")
     kapt("androidx.room:room-compiler:2.5.2")
     implementation("androidx.room:room-ktx:2.5.2")
+
+    implementation("androidx.compose.material:material-icons-extended:1.4.3")
+    implementation("androidx.datastore:datastore-preferences:1.1.7")
+
 }

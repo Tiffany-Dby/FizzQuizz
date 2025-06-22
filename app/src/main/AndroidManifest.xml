@@ -23,6 +23,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".ui.views.QuizActivity" android:theme="@style/Theme.FizzQuiz" />
+        <activity android:name=".ui.views.LeaderboardActivity" android:theme="@style/Theme.FizzQuiz" />
     </application>
 
 </manifest>

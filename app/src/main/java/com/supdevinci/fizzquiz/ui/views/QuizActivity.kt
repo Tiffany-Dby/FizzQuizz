@@ -15,19 +15,19 @@ import com.supdevinci.fizzquiz.ui.theme.FizzQuizTheme
 import com.supdevinci.fizzquiz.viewmodels.QuizViewModel
 
 class QuizActivity: ComponentActivity() {
-    private val quizViewModel : QuizViewModel = QuizViewModel()
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        val quizViewModel = QuizViewModel(application)
         val categoryId = intent.getIntExtra("categoryId", 0)
+        val username = intent.getStringExtra("username") ?: ""
 
         enableEdgeToEdge()
         setContent {
             FizzQuizTheme {
                 Scaffold { innerPadding ->
                     Surface(modifier = Modifier.fillMaxSize().padding(innerPadding).padding(20.dp)) {
-                        Quiz(viewModel = quizViewModel, modifier = Modifier.padding(), categoryId)
+                        Quiz(viewModel = quizViewModel, modifier = Modifier.padding(), categoryId = categoryId, username = username)
                     }
                 }
             }
